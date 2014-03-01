@@ -8,6 +8,10 @@ module.exports = function(grunt) {
             coffee: {
                 files: ['client/**/*.coffee'],
                 tasks: 'coffee'
+            },
+            less: {
+                files: ['client/**/*.less'],
+                tasks: 'less'
             }
         },
         clean: ['.build'],
