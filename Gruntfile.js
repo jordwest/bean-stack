@@ -29,6 +29,15 @@ module.exports = function(grunt) {
                     '.build/application.js': ['client/application.coffee', 'client/**/*.coffee']
                 }
             }
+        },
+        less: {
+            dist: {
+                options: {
+                },
+                files: {
+                    ".build/styles.css": "client/styles.less"
+                }
+            }
         }
     });
 
@@ -36,7 +45,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
-    grunt.registerTask('build', ['clean', 'coffee', 'copy']);
+    grunt.registerTask('build', ['clean', 'coffee', 'copy', 'less']);
     grunt.registerTask('default', ['build', 'watch']);
 };
